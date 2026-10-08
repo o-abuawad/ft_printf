@@ -1,0 +1,23 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Static libraries
+*.a
+
+# Executables & Binaries
+*.out
+*.exe
+test
+test_runner
+
+# Precompiled headers
+*.gch
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
