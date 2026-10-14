@@ -6,7 +6,7 @@
 /*   By: oabu-awa <oabu-awa@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 14:13:45 by oabu-awa          #+#    #+#             */
-/*   Updated: 2026/10/11 16:43:06 by oabu-awa         ###   ########.fr       */
+/*   Updated: 2026/10/14 18:06:12 by oabu-awa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 int	ft_printf(const char *format, ...);
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
+int	ft_putnbr(int n);
 
 #endif

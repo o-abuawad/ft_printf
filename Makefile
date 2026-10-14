@@ -7,7 +7,8 @@ REM = rm -f
 AR = ar rcs
 
 SRCS = ft_putchar.c \
-	   ft_putstr.c
+	   ft_putstr.c \
+	   ft_putnbr.c
 
 OBJS = $(SRCS:.c=.o)
 
