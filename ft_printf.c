@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oabu-awa <oabu-awa@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/17 15:10:19 by oabu-awa          #+#    #+#             */
-/*   Updated: 2026/10/20 17:10:20 by oabu-awa         ###   ########.fr       */
+/*   Created: 2026/10/19 11:13:19 by oabu-awa          #+#    #+#             */
+/*   Updated: 2026/10/22 19:35:20 by oabu-awa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static int	dec_to_hex(unsigned long n, const char *base)
 
 static int	check_val(char f, va_list *arg)
 {
+	unsigned long	ptr;
+
 	if (f == 'c')
 		return (ft_putchar(va_arg(*arg, int)));
 	if (f == 's')
@@ -40,6 +42,13 @@ static int	check_val(char f, va_list *arg)
 		return (dec_to_hex(va_arg(*arg, unsigned int), "0123456789abcdef"));
 	if (f == 'X')
 		return (dec_to_hex(va_arg(*arg, unsigned int), "0123456789ABCDEF"));
+	if (f == 'p')
+	{
+		ptr = (unsigned long)va_arg(*arg, void *);
+		if (!ptr)
+			return (write(1, "(nil)", 5));
+		return (write(1, "0x", 2) + dec_to_hex(ptr, "0123456789abcdef"));
+	}
 	if (f == '%')
 		return (ft_putchar('%'));
 	return (0);
